@@ -46,3 +46,25 @@ export const FloatingList: Story = {
     ]
   }
 }
+
+export const NestedList: Story = {
+  args: {
+    onClick: (args: any) => { console.log(args) },
+    items: [
+      { label: 'Item 1' },
+      { label: 'Item 2' },
+      {
+        label: 'Item 3',
+        items: [
+          { label: 'Subitem 1' },
+          { label: 'Subitem 2' },
+          { label: 'Subitem 3' },
+          { label: 'Subitem 4' },
+          { label: 'Subitem 5' },
+          { label: 'Subitem 6' }
+        ],
+        listProps: { ml: 3, mt: 1 }
+      }
+    ]
+  }
+}

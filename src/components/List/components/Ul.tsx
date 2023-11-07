@@ -1,17 +1,17 @@
-import styled from 'styled-components'
-import { type BoxProps, Box } from '../../Box'
+import styled from 'styled-components';
+import Box, { type BoxProps } from '../../Box';
 
 export interface Props extends BoxProps { }
 
 const Ul = styled(Box)<Props>({
-  listStyle: 'none',
-  marginTop: 0,
-  marginBottom: 0,
-  paddingLeft: 0
-})
+    listStyle: 'none'
+});
 
 Ul.defaultProps = {
-  as: 'ul'
-}
+    as: 'ul',
+    mt: 0,
+    marginBottom: 0,
+    paddingLeft: 0
+};
 
-export default Ul
+export default Ul;

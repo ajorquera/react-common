@@ -3,6 +3,7 @@
   "types": "",
   "main": "dist/components.runtime.common.js",
   "module": "dist/components.runtime.esm.js",
+  "website": "",
   "dependencies": {
     "@babel/preset-react": "^7.22.15",
     "@rollup/plugin-commonjs": "^25.0.7",
