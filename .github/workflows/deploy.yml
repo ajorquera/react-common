@@ -1,0 +1,36 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+permissions:
+  contents: write
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Set the node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
+
+      - name: Install 🔧
+        run: yarn
+
+      - name: Test and Build 🏗️
+        run: |
+          yarn test
+          yarn build:storybook
+
+      - name: Deploy Storybook 📚
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: storybook-static
+          clean: false
+          force: false

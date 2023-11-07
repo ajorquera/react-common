@@ -4,11 +4,18 @@
   "main": "dist/components.runtime.common.js",
   "module": "dist/components.runtime.esm.js",
   "dependencies": {
+    "@babel/preset-react": "^7.22.15",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.7",
     "@types/react": "^18.2.36",
+    "@types/styled-system": "^5.1.21",
+    "eslint": "^8.0.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "react": "^18.2.0",
     "rollup": "^4.3.0",
     "rollup-plugin-dts": "^6.1.0",
@@ -16,14 +23,20 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "storybook": "^7.5.3",
-    "typescript": "^5.2.2",
+    "styled-components": "^6.1.0",
+    "styled-system": "^5.1.5",
+    "styled-tools": "^1.7.2",
+    "typescript": "*",
     "vite": "^4.5.0"
   },
   "scripts": {
     "start": "",
     "storybook": "storybook dev -p 6006",
     "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
-    "build:storybook": "storybook build"
+    "build:storybook": "storybook build",
+    "test": "jest",
+    "test:ci": "yarn test -- --ci && yarn lint",
+    "lint": "eslint -c .eslintrc.js --ext .ts,.tsx src"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.3",
@@ -34,6 +47,13 @@
     "@storybook/react": "^7.5.3",
     "@storybook/react-vite": "^7.5.3",
     "@storybook/testing-library": "^0.2.2",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.33.2",
     "react-dom": "^18.2.0"
   }
 }
