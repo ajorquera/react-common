@@ -38,6 +38,7 @@ module.exports = {
         "@typescript-eslint/no-confusing-void-expression": "off",
         "@typescript-eslint/indent": ["error", 4],
         "@typescript-eslint/semi": [2, "always"],
+        "@typescript-eslint/explicit-function-return-type": "off"
 
     }
 }
